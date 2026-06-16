@@ -78,8 +78,7 @@ public class Controller {
         }
         if (checkbox_os.isSelected()) {
             courses.add("OS");
-        }
-
+        }s
     }
 
 }
