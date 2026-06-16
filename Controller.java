@@ -80,9 +80,20 @@ public class Controller {
         }
 
         // Print the result
-        System.out.println("Name: " + name);
-        System.out.println("Date of Birth: " + dob);
-        System.out.println("Department: " + department);
-        System.out.println("Courses: " + String.join(", ", courses));
+        String result = //
+        "- Name: " + name + "\n" +
+                        "- DOB: " + dob + "\n" +
+                        "- Department: " + department + "\n" +
+                        "- Courses: " + String.join(", ", courses) + "\n";
+        if (courses.size() == 0) {
+            result = result + " -N/A";
+        }else {
+            for (int i = 0; i < courses.size(); i++) {
+                result = result + " -" + courses.get(i) + "\n";
+            }
+
+            System.out.println(result);
+            
+        }
     }
 }
