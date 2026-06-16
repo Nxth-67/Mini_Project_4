@@ -6,13 +6,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="label_result" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <Label layoutX="186.0" layoutY="25.0" prefHeight="54.0" prefWidth="226.0" text="Mini Project 4">
          <font>
@@ -44,24 +45,28 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="87.0" layoutY="316.0" prefHeight="18.0" prefWidth="294.0" text="Your Favorite Courses:">
+      <Label layoutX="87.0" layoutY="315.0" prefHeight="18.0" prefWidth="294.0" text="Your Favorite Courses:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="242.0" layoutY="437.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="113.0" text="Submit">
+      <Button fx:id="button_submit" layoutX="242.0" layoutY="437.0" mnemonicParsing="false" onAction="#on_submit" prefHeight="35.0" prefWidth="113.0" text="Submit">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <RadioButton layoutX="168.0" layoutY="248.0" mnemonicParsing="false" text="GTR" />
-      <RadioButton layoutX="168.0" layoutY="271.0" mnemonicParsing="false" text="GIC" />
-      <RadioButton layoutX="168.0" layoutY="294.0" mnemonicParsing="false" text="AMS" />
-      <CheckBox layoutX="175.0" layoutY="343.0" mnemonicParsing="false" text="Network" />
-      <CheckBox layoutX="175.0" layoutY="368.0" mnemonicParsing="false" text="OS" />
-      <CheckBox layoutX="175.0" layoutY="393.0" mnemonicParsing="false" text="OOP" />
-      <DatePicker layoutX="144.0" layoutY="178.0" prefHeight="26.0" prefWidth="250.0" />
-      <TextField layoutX="144.0" layoutY="138.0" prefHeight="26.0" prefWidth="250.0" />
+      <RadioButton fx:id="radiobutton_gtr" layoutX="168.0" layoutY="248.0" mnemonicParsing="false" text="GTR">
+         <toggleGroup>
+            <ToggleGroup fx:id="group_department" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radiobutton_gic" layoutX="168.0" layoutY="271.0" mnemonicParsing="false" text="GIC" toggleGroup="$group_department" />
+      <RadioButton fx:id="radiobutton_ams" layoutX="168.0" layoutY="294.0" mnemonicParsing="false" text="AMS" toggleGroup="$group_department" />
+      <CheckBox fx:id="checkbox_network" layoutX="175.0" layoutY="343.0" mnemonicParsing="false" text="Network" />
+      <CheckBox fx:id="checkbox_os" layoutX="175.0" layoutY="368.0" mnemonicParsing="false" text="OS" />
+      <CheckBox fx:id="checkbox_oop" layoutX="175.0" layoutY="393.0" mnemonicParsing="false" text="OOP" />
+      <DatePicker fx:id="datepicker_dob" layoutX="144.0" layoutY="178.0" prefHeight="26.0" prefWidth="250.0" />
+      <TextField fx:id="textfield_name" layoutX="144.0" layoutY="138.0" prefHeight="26.0" prefWidth="250.0" />
       <ImageView fitHeight="113.0" fitWidth="113.0" layoutX="473.0" layoutY="14.0">
          <image>
             <Image url="@../Mini_Project_3/asset/GTR.png" />
