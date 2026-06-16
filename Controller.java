@@ -78,7 +78,12 @@ public class Controller {
         }
         if (checkbox_os.isSelected()) {
             courses.add("OS");
-        }s
-    }
+        }
 
+        // Print the result
+        System.out.println("Name: " + name);
+        System.out.println("Date of Birth: " + dob);
+        System.out.println("Department: " + department);
+        System.out.println("Courses: " + String.join(", ", courses));
+    }
 }
