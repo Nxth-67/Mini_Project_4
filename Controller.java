@@ -50,9 +50,8 @@ public class Controller {
         //
         String name = "N/A";
         if (textfield_name.getText() != " ") {
-            textfield_name.getText();
-        } 
-        
+            name = textfield_name.getText();
+        }
         //
         String dob = "N/A";
         if (datepicker_dob.getValue() != null) {
