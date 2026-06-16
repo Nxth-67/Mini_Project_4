@@ -1,4 +1,7 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -92,8 +95,11 @@ public class Controller {
                 result = result + " -" + courses.get(i) + "\n";
             }
 
-            System.out.println(result);
-            
+            Date date = new Date();
+            DateFormat format_date = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            String formatted_date = format_date.format(date);
+            System.out.println(formatted_date);
+
         }
     }
 }
