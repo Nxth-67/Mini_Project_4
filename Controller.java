@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -45,6 +46,39 @@ public class Controller {
 
     @FXML
     void on_submit(ActionEvent event) {
+
+        //
+        String name = "N/A";
+        if (textfield_name.getText() != " ") {
+            textfield_name.getText();
+        } 
+        
+        //
+        String dob = "N/A";
+        if (datepicker_dob.getValue() != null) {
+            dob = datepicker_dob.getValue().toString();
+        }
+        //
+        String department = "N/A";
+        if (radiobutton_ams.isSelected()) {
+            department = "AMS";
+        } else if (radiobutton_gic.isSelected()) {
+            department = "GIC";
+        } else if (radiobutton_gtr.isSelected()) {
+            department = "GTR";
+        }
+
+        //
+        ArrayList<String> courses = new ArrayList<>();
+        if (checkbox_network.isSelected()) {
+            courses.add("Network");
+        }
+        if (checkbox_oop.isSelected()) {
+            courses.add("OOP");
+        }
+        if (checkbox_os.isSelected()) {
+            courses.add("OS");
+        }
 
     }
 
