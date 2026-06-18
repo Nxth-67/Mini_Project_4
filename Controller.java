@@ -92,24 +92,23 @@ public class Controller {
                         "- Courses: " + String.join(", ", courses) + "\n";
         if (courses.size() == 0) {
             result = result + " - N/A";
-        }else {
+        } else {
             for (int i = 0; i < courses.size(); i++) {
                 result = result + " -" + courses.get(i) + "\n";
             }
+        }
 
-            Date date = new Date();
-            DateFormat format_date = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-            String formatted_date = format_date.format(date);
-            System.out.println(formatted_date);
-
-            try {
-                FileWriter writer = new FileWriter(format_date.format(date) + ".txt");
-                writer.write(result + "\n");
-                writer.close();
-                label_output.setText("Saved to" + format_date.format(date) + ".txt");
-            } catch (Exception e) {
-            }
-
+        Date date = new Date();
+        DateFormat saveFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+        String fileName = saveFormat.format(date) + ".txt";
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            writer.write(result + "\n");
+            writer.close();
+            label_output.setText("Saved to " + fileName);
+        } catch (Exception e) {
+            label_output.setText("Failed to save file");
+            e.printStackTrace();
         }
     }
 }
